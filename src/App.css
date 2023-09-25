@@ -1,0 +1,156 @@
+* {
+  font-family: 'Oswald', sans-serif;
+}
+
+@font-face {
+  font-family: 'ClockFont';
+  src: url(./fonts/alarm\ clock.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: #414348;
+}
+
+.Header {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 15px
+}
+
+h1 {
+  margin-top: 10px;
+  text-align: center;
+  color: #ffd000;
+  font-size: 60px;
+  letter-spacing: 15px;
+  text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px rgb(255, 251, 0),
+      0 0 82px rgb(255, 251, 0),
+      0 0 92px rgb(229, 255, 0),
+      0 0 102px rgb(255, 230, 0),
+      0 0 155px rgb(255, 208, 0);
+}
+
+button, select {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(228, 214, 88);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+button:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+.TimezoneSelector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+.Clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:  none;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #5e5b5b;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  gap: 20px;
+  width: 300px;
+}
+
+.ClockListItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 40px;
+  gap: 20px
+}
+
+.ClockButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  font-family: 'ClockFont';
+  font-size: 40px;
+  margin: 0;
+  background: -webkit-linear-gradient(#e97f78, #f0ee71, #61f73c);
+   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  text-align: center;
+  letter-spacing: 15px;
+  text-decoration: dotted;
+}
